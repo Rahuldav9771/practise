@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: postgresql
+        image: postgres:17.10
+        ports:
+         - containerPort: 5432
+        env:
+         - name: POSTGRES_USER
+           value: "admin"
+         - name: POSTGRES_PASSWORD
+           value: "admin@12345"
+         - name: POSTGRES_DB
+           value: "mydatabase"
+
+
