@@ -12,7 +12,7 @@ spec:
         app: firefox
     spec:
       containers:
-      - name: firefox
+      - name: firefox1
         image: jlesage/firefox
         ports:
         - containerPort: 3001
